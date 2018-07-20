@@ -1,0 +1,11 @@
+* * * * * /var/www/html/firebase/cronscript.sh employee_logs >> /var/log/cron
+* * * * * /var/www/html/firebase/cronscript.sh overtime_request >> /var/log/cron
+* * * * * /var/www/html/firebase/cronscript.sh leave_request >> /var/log/cron
+* * * * * /var/www/html/firebase/cronscript.sh employee_timesheet >> /var/log/cron
+*/2 * * * * php /var/www/html/firebase/index.php Firebase_controller saveData "employee_info" >> /var/log/cron
+*/2 * * * * php /var/www/html/firebase/index.php Firebase_controller saveData "employee_department" >> /var/log/cron
+*/2 * * * * php /var/www/html/firebase/index.php Firebase_controller saveData "employee_designation" >> /var/log/cron
+*/2 * * * * php /var/www/html/firebase/index.php Firebase_controller saveData "expenses_type" >> /var/log/cron
+*/2 * * * * php /var/www/html/firebase/index.php Firebase_controller saveData "leave_type" >> /var/log/cron
+*/2 * * * * php /var/www/html/firebase/index.php Firebase_controller saveData "projects" >> /var/log/cron
+*/2 * * * * php /var/www/html/firebase/index.php Firebase_controller saveData "auth_accounts" >> /var/log/cron
